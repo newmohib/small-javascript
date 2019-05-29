@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Circle(radius) {
+            //instance members
+            this.radius=radius;
+        }
+        //prototypw members
+        Circle.prototype.draw=function() {
+            console.log(' drew fuction ' + this.radius);
+        }
+
+        Object.prototype.toString=function() {
+           return this.radius;
+           //return this.draw();
+        }
+        const c1=new Circle(20);
+        c1.draw();
+        const radius= c1.toString();
+        console.log(radius);
+
+        //only instance key
+        const instanceKey= Object.keys(c1);
+        console.log(instanceKey);
+
+        // all key (instance and Prototype key)
+
+        for (const key in c1) {
+           // if (c1.hasOwnProperty(key)) {
+                const element = c1[key];
+                console.log(key);
+                
+          //  }
+        }
+
+        
+    </script>
+</body>
+</html>
